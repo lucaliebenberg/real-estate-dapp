@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/_lucaliebenberg/Desktop/Coding/real-estate-dapp/contracts/Escrow.sol": {
-      "lastModificationDate": 1673250712922,
-      "contentHash": "461147550cb7bedade344e4ab7583268",
+      "lastModificationDate": 1673254944689,
+      "contentHash": "9add5d20a47485a240deed324bcdd1a1",
       "sourceName": "contracts/Escrow.sol",
       "solcConfig": {
         "version": "0.8.17",
