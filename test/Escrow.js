@@ -117,4 +117,22 @@ describe("Escrow", () => {
       expect(result).to.be.equal(true);
     });
   });
+
+  // Approval tests
+  describe("Approval", () => {
+    it("Updates approval status", async () => {
+      let buyerTransaction = await escrow.connect(buyer).approveSale(1);
+      await buyerTransaction.wait();
+
+      let sellerTransaction = await escrow.connect(seller).approveSale(1);
+      await sellerTransaction.wait();
+
+      let lenderTransaction = await escrow.connect(lender).approveSale(1);
+      await lenderTransaction.wait();
+
+      expect(await escrow.approval(1, buyer.address)).to.be.equal(true);
+      expect(await escrow.approval(1, seller.address)).to.be.equal(true);
+      expect(await escrow.approval(1, lender.address)).to.be.equal(true);
+    });
+  });
 });
