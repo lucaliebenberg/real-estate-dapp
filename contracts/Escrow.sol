@@ -93,4 +93,22 @@ contract Escrow {
         return address(this).balance;
     }
 
+    // Finalise Sale:
+   
+
+    
+    // => Transfer NFT to buyer
+    // => Transfer Funds to Seller
+
+    function finaliseSale(uint256 _nftID) public {
+         // => Require inspection status (add more items here, like appraisal)
+        require(inspectionPassed[_nftID]);
+        // => Require sale to be authorised
+        require(approval[_nftID][buyer[_nftID]]);
+        require(approval[_nftID][seller]);
+        require(approval[_nftID][lender]);
+          // => Require funds to be correct amount
+        require(address(this).balance >= purchasePrice[_nftID]);
+    }
+
 }
